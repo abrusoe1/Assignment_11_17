@@ -12,16 +12,16 @@ public class PigLatin {
 		}
 		else
 		{
-			int vowelposition = -1;
+			int vowelPosition = -1;
 			for (int i = 0; i < ptlc.length(); i++)
 			{
 				if (ptlc.charAt(i) == 'a' || ptlc.charAt(i) == 'e' || ptlc.charAt(i) == 'i' || ptlc.charAt(i) == 'o' || ptlc.charAt(i) == 'u')
 				{
-					vowelposition = i;
+					vowelPosition = i;
 					break;	//without this line it was looking for the last vowel (erstrongay rather than ongerstray on stronger, for example)
 				}
 			}
-			if (vowelposition == -1)
+			if (vowelPosition == -1)
 			{
 				String oops = "There aren't any vowels";
 				return oops;
@@ -29,7 +29,7 @@ public class PigLatin {
 			else
 			{
 				String pl = ptlc;
-				for (int i = 0; i < vowelposition; i++)
+				for (int i = 0; i < vowelPosition; i++)
 				{
 					pl = (pl + pl.charAt(0));
 					pl = pl.substring(1);
@@ -43,8 +43,8 @@ public class PigLatin {
 	public static void main(String[] args) {
 		System.out.print("Please enter a word to be translated into Pig Latin: ");
 		Scanner scnr = new Scanner (System.in);
-		String plaintext = scnr.next();
-		String plf = translate(plaintext);
+		String plainText = scnr.next();
+		String plf = translate(plainText);
 		System.out.println(plf);	//Pig Latin Final
 		scnr.close();
 	}
